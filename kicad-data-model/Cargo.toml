@@ -1,0 +1,19 @@
+[package]
+name = "kicad-data-model"
+description = "Core data model for kicad parser."
+repository.workspace = true
+publish = true
+readme.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+license.workspace = true
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+
+[dev-dependencies]
+
+[lints]
+workspace = true

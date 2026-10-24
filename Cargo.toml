@@ -1,0 +1,64 @@
+[workspace]
+resolver = "2"
+members = ["kicad-data-model"]
+default-members = ["kicad-data-model"]
+
+# Config for 'cargo release'
+[workspace.metadata.release]
+# Don't release any crate unless its manifest has `release = true`
+release = false
+
+[workspace.package]
+version = "0.0.1"
+edition = "2024"
+repository = "https://github.com/mellemahp/kicad-parser"
+license-file = "LICENSE"
+license = "Apache-2.0"
+readme = "README.md"
+authors = ["Hunter Mellema <hunter@hmellema.space>"]
+keywords = []
+categories = []
+
+[workspace.lints.rust]
+future_incompatible = { level = "warn", priority = 2 }
+nonstandard_style = { level = "deny", priority = 1 }
+unsafe_code = "deny"
+unused_qualifications = "warn"
+unused_extern_crates = "warn"
+unreachable_code = { level = "deny", priority = 0 }
+unreachable_patterns = "deny"
+trivial_casts = "warn"
+trivial_numeric_casts = "warn"
+elided_lifetimes_in_paths = "warn"
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = 10 }
+wildcard_imports = { level = "deny", priority = 11 }
+option_if_let_else = { level = "deny" }
+or_fun_call = { level = "deny" }
+get_first = { level = "deny" }
+redundant_clone = { level = "deny" }
+manual_ok_or = { level = "deny" }
+manual_while_let_some = { level = "deny" }
+unnecessary_wraps = { level = "deny" }
+needless_collect = { level = "deny" }
+needless_pass_by_value = { level = "deny" }
+pedantic = { priority = -1, level = "warn" }
+struct_field_names = "allow"
+similar_names = "allow"
+
+# documentation lints
+doc_link_with_quotes = { level = "deny" }
+doc_markdown = { level = "deny" }
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+[profile.bench]
+opt-level = 3
+lto = "fat"
+debug = true
+
