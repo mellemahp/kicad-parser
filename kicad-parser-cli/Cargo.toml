@@ -1,0 +1,20 @@
+[package]
+name = "kicad-parser-cli"
+description = "Cli for parser."
+repository.workspace = true
+publish = true
+readme.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+license.workspace = true
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+kicad-data-model.workspace = true
+clap = { version = "4.6.7", features = ["derive"] }
+uuid = { version = "1.29.0", features = ["v4"] }
+
+[lints]
+workspace = true

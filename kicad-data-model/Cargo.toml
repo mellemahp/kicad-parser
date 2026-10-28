@@ -12,8 +12,14 @@ edition.workspace = true
 version.workspace = true
 
 [dependencies]
+serde = { version = "1.0.229", features = ["derive"] }
+uuid = { version = "1.29.0", features = ["v4", "serde"] }
+lexpr = { version = "0.2.7", features = [] }
+thiserror = "2.0.21"
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
 
 [dev-dependencies]
+rstest = "0.23.0"
 
 [lints]
 workspace = true
